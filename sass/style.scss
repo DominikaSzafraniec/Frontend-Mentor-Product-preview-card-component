@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100vh;
+    background-color: hsl(30, 38%, 92%);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.card {
+    display: grid;
+    grid-template-rows: 40fr 60fr;
+    width: 37.5rem;
+    
+    background-color: hsl(0, 0%, 100%);
+    border-radius: .7rem;
+    overflow: hidden;
+    &__description, &__prices--sub, &__sub-heading, &__btn {
+        font-size: 1.4rem;
+        color: hsl(228, 12%, 48%);
+    }
+    &__img-box {
+        background-image: url('../images/image-product-mobile.jpg');
+        background-size: cover;
+    }
+
+    // TEXT BOX **************************************************************************
+    &__text-box {
+        display: grid;
+        padding: 2.2rem 3.4rem;
+    }
+    &__sub-heading {
+        text-transform: uppercase;
+        letter-spacing: .5rem;
+    }
+    &__primary-heading {
+        margin: 1rem 0;
+        font-family: 'Fraunces', serif;
+        font-size: 3.2rem;
+        color: hsl(212, 21%, 14%);
+    }
+    &__description {
+        word-spacing: .3rem;
+        line-height: 1.8;
+    }
+    &__prices {
+        display: flex;
+        align-items: center;
+        margin: 2rem 0;
+        gap: 2rem;
+    }
+
+    &__prices--main {
+        font-family: 'Fraunces', serif;
+        color: hsl(158, 36%, 37%);
+        font-weight: 700;
+        font-size: 4rem;
+    }
+    &__prices--sub {
+        text-decoration:line-through;
+    }
+    &__btn {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: 1.4rem 0;
+        font-family: 'Montserrat', sans-serif;
+        background-color: hsl(158, 36%, 37%);
+        color: hsl(0, 0%, 100%);
+        border: none;
+        border-radius: 1rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background-color .3s;
+
+        &:hover {
+            background-color: hsl(158, 36%, 21%);
+        }
+    }
+    &__icon {
+        margin-right: 0.5rem;
+    }
+}
+
+@media (min-width: 1000px) {
+    .card {
+        grid-template-rows: none;
+        grid-template-columns: 1fr 1fr;
+        width: 80rem;
+        &__text-box {
+            padding: 4.8rem;
+            gap: 2rem;
+        }
+        &__img-box {
+            background-image: url('../images/image-product-desktop.jpg');
+        }
+    }
+}
